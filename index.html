@@ -29,7 +29,8 @@ table { width:100%; border-collapse:collapse; font-size:14px; }
 th { padding:10px 16px; text-align:left; font-size:12px; color:#8b949e; border-bottom:1px solid #30363d; }
 th.sortable { cursor:pointer; user-select:none; }
 th.sortable:hover { color:#e6edf3; }
-.sort-arrow { font-size:10px; color:#58a6ff; }
+.sort-arrow { display:inline-flex; align-items:center; justify-content:center; width:16px; height:16px; margin-left:4px; border-radius:4px; background:#30363d; color:#8b949e; font-size:10px; line-height:1; }
+.sort-arrow.active { background:#1f6feb; color:#fff; }
 td { padding:10px 16px; border-bottom:1px solid #21262d; vertical-align:middle; }
 tr:hover td { background:#161b22; }
 .badge { display:inline-block; padding:3px 10px; border-radius:12px; font-size:12px; font-weight:600; }
@@ -74,7 +75,7 @@ tr:hover td { background:#161b22; }
 </div>
 
 <div class="stats">
-  <div class="stat-card total"><div class="label">ALL</div><div class="value" id="total-count">-</div></div>
+  <div class="stat-card total"><div class="label">ทั้งหมด</div><div class="value" id="total-count">-</div></div>
   <div class="stat-card buy"><div class="label">⚠️ Ready to Buy</div><div class="value" id="buy-count">-</div></div>
   <div class="stat-card sell"><div class="label">🔴 Ready to Sell</div><div class="value" id="sell-count">-</div></div>
 </div>
@@ -89,7 +90,7 @@ tr:hover td { background:#161b22; }
   <div class="loading" id="loading">⏳ กำลังโหลด...</div>
   <table id="main-table" style="display:none">
     <thead>
-      <tr><th>#</th><th class="sortable" onclick="sortBy('symbol')">Symbol <span id="sort-symbol" class="sort-arrow"></span></th><th>สัญญาณ</th><th class="sortable" onclick="sortBy('price')">ราคา (บาท) <span id="sort-price" class="sort-arrow"></span></th><th class="sortable" onclick="sortBy('date')">ล่าสุด <span id="sort-date" class="sort-arrow"></span></th><th>ใหม่</th><th>กราฟ</th><th>ส่ง LINE</th></tr>
+      <tr><th>#</th><th class="sortable" onclick="sortBy('symbol')">Symbol <span id="sort-symbol" class="sort-arrow">⇕</span></th><th>สัญญาณ</th><th class="sortable" onclick="sortBy('price')">ราคา (บาท) <span id="sort-price" class="sort-arrow">⇕</span></th><th class="sortable" onclick="sortBy('date')">ล่าสุด <span id="sort-date" class="sort-arrow">⇕</span></th><th>ใหม่</th><th>กราฟ</th><th>ส่ง LINE</th></tr>
     </thead>
     <tbody id="table-body"></tbody>
   </table>
@@ -127,7 +128,10 @@ function sortBy(col) {
   if (sortCol === col) sortDir = -sortDir;
   else { sortCol = col; sortDir = 1; }
   ['symbol','price','date'].forEach(c => {
-    document.getElementById('sort-'+c).textContent = (c===sortCol) ? (sortDir===1?'▲':'▼') : '';
+    const el = document.getElementById('sort-'+c);
+    const isActive = c===sortCol;
+    el.textContent = isActive ? (sortDir===1?'▲':'▼') : '⇕';
+    el.classList.toggle('active', isActive);
   });
   renderTable(currentFilter);
 }
