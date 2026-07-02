@@ -16,46 +16,141 @@ PERIOD       = "10y"
 CHART_MONTHS = 60
 THAI_TZ      = timezone(timedelta(hours=7))
 
-SET100 = [
-    "PTT.BK","PTTEP.BK","PTTGC.BK","TOP.BK","IRPC.BK","BCP.BK",
-    "GULF.BK","GPSC.BK","EGCO.BK","RATCH.BK","BGRIM.BK","BANPU.BK",
+# SET100 = [
+#     "PTT.BK","PTTEP.BK","PTTGC.BK","TOP.BK","IRPC.BK","BCP.BK",
+#     "GULF.BK","GPSC.BK","EGCO.BK","RATCH.BK","BGRIM.BK","BANPU.BK",
+#     "SCB.BK","KBANK.BK","BBL.BK","KTB.BK","BAY.BK","TTB.BK",
+#     "TISCO.BK","KKP.BK","TCAP.BK",
+#     "CPALL.BK","CRC.BK","BJC.BK","HMPRO.BK","COM7.BK","MAKRO.BK",
+#     "CPF.BK","TU.BK","BTG.BK","GFPT.BK","OSP.BK","CBG.BK",
+#     "ICHI.BK","OISHI.BK","SAPPE.BK","MALEE.BK","TKN.BK","NRF.BK",
+#     "LH.BK","AP.BK","QH.BK","SIRI.BK","ORI.BK","SPALI.BK",
+#     "PSH.BK","SC.BK","NOBLE.BK",
+#     "BH.BK","BCH.BK","CHG.BK","NTV.BK","BDMS.BK","PR9.BK","RAM.BK",
+#     "ADVANC.BK","TRUE.BK","JAS.BK","THCOM.BK","DIF.BK","JASIF.BK",
+#     "AOT.BK","MINT.BK","ERW.BK","CENTEL.BK","AWC.BK","MAJOR.BK",
+#     "SCC.BK","SCCC.BK","TBSP.BK","TPIPL.BK","IVL.BK","STA.BK",
+#     "DELTA.BK","KCE.BK","HANA.BK","SVI.BK","BE8.BK","MFEC.BK",
+#     "SAWAD.BK","MTC.BK","TIDLOR.BK","AEONTS.BK","KTC.BK","TQM.BK",
+#     "JMART.BK","JMT.BK","SINGER.BK",
+#     "WHA.BK","AMATA.BK","ROJNA.BK","BEM.BK","BTS.BK","CPN.BK",
+#     "GLOBAL.BK","RS.BK","VGI.BK","BEAUTY.BK","TNP.BK","NCH.BK",
+#     "PYLON.BK","ITD.BK","CK.BK","STEC.BK",
+# ]
+
+# MAI = [
+#     "SYNEX.BK","SVOA.BK","SIS.BK","INET.BK","FORTH.BK","AIT.BK",
+#     "EKH.BK","LPH.BK","VIBHA.BK","WPH.BK","PRINC.BK",
+#     "SABUY.BK","GEL.BK","CFRESH.BK","ASIAN.BK","MILL.BK",
+#     "RICHY.BK","MC.BK","MONO.BK","MASTER.BK","CITY.BK",
+#     "BCPG.BK","SUPER.BK","TPCH.BK","SPCG.BK","ACE.BK","GUNKUL.BK",
+#     "MEGA.BK","OCC.BK","PAP.BK","PDI.BK",
+#     "SAT.BK","STANLY.BK","SMIT.BK","TCC.BK","TEAMG.BK",
+#     "GMM.BK","GRAMMY.BK","JKN.BK","JSP.BK",
+#     "MBKET.BK","MBK.BK","MSC.BK","NUSA.BK",
+#     "PLANB.BK","PTG.BK","RCL.BK","RPCX.BK",
+#     "SAMART.BK","SAUCE.BK","SCN.BK","SEAFCO.BK",
+#     "SKR.BK","SLP.BK","SMART.BK","SNP.BK",
+#     "SOHO.BK","SPA.BK","SPRC.BK","SQ.BK",
+#     "SSP.BK","STAR.BK","SUN.BK","SUSCO.BK",
+# ]
+
+SET300 = [
+    # --- Energy & Utilities ---
+    "PTT.BK","PTTEP.BK","PTTGC.BK","TOP.BK","IRPC.BK","BCP.BK","OR.BK",
+    "SPRC.BK","PTG.BK","SUSCO.BK","SGP.BK","PRM.BK","SEAOIL.BK","SCN.BK",
+    "GULF.BK","GPSC.BK","EGCO.BK","RATCH.BK","BGRIM.BK","BANPU.BK","BPP.BK",
+    "BCPG.BK","CKP.BK","WHAUP.BK","GUNKUL.BK","ACE.BK","SSP.BK","TPIPP.BK",
+    "EA.BK","SUPER.BK","DEMCO.BK","TSE.BK","EASTW.BK",
+
+    # --- Banks ---
     "SCB.BK","KBANK.BK","BBL.BK","KTB.BK","BAY.BK","TTB.BK",
-    "TISCO.BK","KKP.BK","TCAP.BK",
-    "CPALL.BK","CRC.BK","BJC.BK","HMPRO.BK","COM7.BK","MAKRO.BK",
-    "CPF.BK","TU.BK","BTG.BK","GFPT.BK","OSP.BK","CBG.BK",
-    "ICHI.BK","OISHI.BK","SAPPE.BK","MALEE.BK","TKN.BK","NRF.BK",
-    "LH.BK","AP.BK","QH.BK","SIRI.BK","ORI.BK","SPALI.BK",
-    "PSH.BK","SC.BK","NOBLE.BK",
-    "BH.BK","BCH.BK","CHG.BK","NTV.BK","BDMS.BK","PR9.BK","RAM.BK",
-    "ADVANC.BK","TRUE.BK","JAS.BK","THCOM.BK","DIF.BK","JASIF.BK",
-    "AOT.BK","MINT.BK","ERW.BK","CENTEL.BK","AWC.BK","MAJOR.BK",
-    "SCC.BK","SCCC.BK","TBSP.BK","TPIPL.BK","IVL.BK","STA.BK",
-    "DELTA.BK","KCE.BK","HANA.BK","SVI.BK","BE8.BK","MFEC.BK",
+    "TISCO.BK","KKP.BK","TCAP.BK","LHFG.BK","CIMBT.BK",
+
+    # --- Finance / Leasing / Securities ---
     "SAWAD.BK","MTC.BK","TIDLOR.BK","AEONTS.BK","KTC.BK","TQM.BK",
-    "JMART.BK","JMT.BK","SINGER.BK",
-    "WHA.BK","AMATA.BK","ROJNA.BK","BEM.BK","BTS.BK","CPN.BK",
-    "GLOBAL.BK","RS.BK","VGI.BK","BEAUTY.BK","TNP.BK","NCH.BK",
-    "PYLON.BK","ITD.BK","CK.BK","STEC.BK",
+    "JMART.BK","JMT.BK","SINGER.BK","ASP.BK","BAM.BK","CHAYO.BK",
+    "ASK.BK","THANI.BK","MICRO.BK","SAK.BK","TK.BK","AMANAH.BK",
+    "HENG.BK","MBK.BK","SGC.BK",
+
+    # --- Insurance ---
+    "BLA.BK","TLI.BK","TIPH.BK","BKI.BK","THRE.BK","SMK.BK",
+
+    # --- Commerce / Retail ---
+    "CPALL.BK","CPAXT.BK","CRC.BK","BJC.BK","HMPRO.BK","COM7.BK","GLOBAL.BK",
+    "DOHOME.BK","ILM.BK","SYNEX.BK","SPVI.BK","MOSHI.BK","SIS.BK",
+    "SABINA.BK","CPW.BK","TACC.BK","OCC.BK","TNP.BK",
+
+    # --- Food, Beverage & Agri ---
+    "CPF.BK","TU.BK","BTG.BK","GFPT.BK","TFG.BK","ITC.BK",
+    "OSP.BK","CBG.BK","ICHI.BK","SAPPE.BK","MALEE.BK","TKN.BK","NRF.BK",
+    "SNNP.BK","ASIAN.BK","TIPCO.BK","M.BK","ZEN.BK","AU.BK",
+    "TVO.BK","KSL.BK","BRR.BK","KBS.BK","CPI.BK","TWPC.BK",
+    "NER.BK","STGT.BK","STA.BK","UVAN.BK","NSL.BK","PRG.BK",
+    "RBF.BK","TFM.BK","SUN.BK","AAI.BK","SNP.BK","LEE.BK","GGC.BK",
+
+    # --- Personal Products & Pharma ---
+    "DDD.BK","MEGA.BK","TOA.BK",
+
+    # --- Property ---
+    "LH.BK","AP.BK","QH.BK","SIRI.BK","ORI.BK","SPALI.BK","PSH.BK",
+    "SC.BK","NOBLE.BK","ANAN.BK","ASW.BK","SENA.BK","LPN.BK",
+    "AREEYA.BK","PF.BK","S.BK","BRI.BK","CHEWA.BK","LALIN.BK",
+    "GRAND.BK","BLAND.BK","NCH.BK",
+
+    # --- Industrial Estates ---
+    "WHA.BK","AMATA.BK","ROJNA.BK",
+
+    # --- Construction Materials & Packaging ---
+    "SCC.BK","SCGP.BK","SCCC.BK","TPIPL.BK","TBSP.BK","DCC.BK","DRT.BK",
+    "TASCO.BK","VNG.BK","EPG.BK","PTL.BK","TPAC.BK","VNT.BK",
+    "TPBI.BK","BGC.BK","SFLEX.BK","AJ.BK","TMT.BK","PAP.BK","ZIGA.BK",
+
+    # --- Construction Services ---
+    "PYLON.BK","ITD.BK","CK.BK","STEC.BK","SEAFCO.BK","NWR.BK",
+    "SYNTEC.BK","UNIQ.BK","TTCL.BK","PREB.BK","CIVIL.BK",
+
+    # --- Petrochemicals ---
+    "IVL.BK",
+
+    # --- Healthcare ---
+    "BH.BK","BCH.BK","CHG.BK","NTV.BK","BDMS.BK","PR9.BK","RAM.BK",
+    "THG.BK","VIBHA.BK","LPH.BK","AHC.BK","EKH.BK","WPH.BK","SKR.BK",
+    "PRINC.BK","RJH.BK","KLINIQ.BK","MASTER.BK","SISB.BK",
+
+    # --- ICT / Telecom ---
+    "ADVANC.BK","TRUE.BK","JAS.BK","THCOM.BK","DIF.BK","JASIF.BK",
+    "SAMART.BK","SAMTEL.BK","FORTH.BK","AIT.BK","ILINK.BK","ITEL.BK",
+    "INSET.BK","INET.BK","SYMC.BK","HUMAN.BK","BBIK.BK","BE8.BK","MFEC.BK",
+    "DITTO.BK","TKC.BK","SKY.BK","NETBAY.BK","ADVICE.BK","AS.BK",
+
+    # --- Electronics ---
+    "DELTA.BK","KCE.BK","HANA.BK","SVI.BK","CCET.BK","SMT.BK",
+
+    # --- Media ---
+    "RS.BK","VGI.BK","BEAUTY.BK","BEC.BK","WORK.BK","ONEE.BK",
+    "PLANB.BK","MACO.BK","MONO.BK","GRAMMY.BK","MAJOR.BK",
+
+    # --- Transportation & Logistics ---
+    "AOT.BK","BEM.BK","BTS.BK","THAI.BK","AAV.BK","BA.BK",
+    "PSL.BK","TTA.BK","RCL.BK","WICE.BK","LEO.BK","III.BK",
+    "NYT.BK","PORT.BK","SJWD.BK","KEX.BK","SONIC.BK",
+
+    # --- Tourism & Hotels ---
+    "MINT.BK","ERW.BK","CENTEL.BK","AWC.BK","SHR.BK","VRANDA.BK",
+    "DUSIT.BK","ASIA.BK",
+
+    # --- Auto Parts & Industrial ---
+    "STANLY.BK","SAT.BK","AH.BK","PCSGH.BK","SNC.BK","IRC.BK","GYT.BK","TOG.BK",
+
+    # --- Property/Retail funds & infra ---
+    "CPN.BK",
+
+    # --- Services / Other ---
+    "SO.BK","PRTR.BK","ADD.BK",
 ]
 
-MAI = [
-    "SYNEX.BK","SVOA.BK","SIS.BK","INET.BK","FORTH.BK","AIT.BK",
-    "EKH.BK","LPH.BK","VIBHA.BK","WPH.BK","PRINC.BK",
-    "SABUY.BK","GEL.BK","CFRESH.BK","ASIAN.BK","MILL.BK",
-    "RICHY.BK","MC.BK","MONO.BK","MASTER.BK","CITY.BK",
-    "BCPG.BK","SUPER.BK","TPCH.BK","SPCG.BK","ACE.BK","GUNKUL.BK",
-    "MEGA.BK","OCC.BK","PAP.BK","PDI.BK",
-    "SAT.BK","STANLY.BK","SMIT.BK","TCC.BK","TEAMG.BK",
-    "GMM.BK","GRAMMY.BK","JKN.BK","JSP.BK",
-    "MBKET.BK","MBK.BK","MSC.BK","NUSA.BK",
-    "PLANB.BK","PTG.BK","RCL.BK","RPCX.BK",
-    "SAMART.BK","SAUCE.BK","SCN.BK","SEAFCO.BK",
-    "SKR.BK","SLP.BK","SMART.BK","SNP.BK",
-    "SOHO.BK","SPA.BK","SPRC.BK","SQ.BK",
-    "SSP.BK","STAR.BK","SUN.BK","SUSCO.BK",
-]
-
-STOCKS = list(dict.fromkeys(SET100 + MAI))
+STOCKS = list(dict.fromkeys(SET300))
 
 def ema(series, period):
     return series.ewm(span=period, adjust=False).mean()
